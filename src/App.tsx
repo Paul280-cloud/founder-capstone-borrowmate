@@ -987,7 +987,61 @@ const styles = `
 .tool-emoji.large {
   font-size: 9rem;
 }
+.tool-emoji {
+  font-size: 5.5rem;
+  filter: drop-shadow(0 12px 24px rgba(23, 32, 27, .18));
+}
 
+.tool-emoji.large {
+  font-size: 10rem;
+}
+
+.full-button:hover,
+.primary-button:hover {
+  background: #f97316;
+}
+
+.ghost-button:hover {
+  background: #e3d8c9;
+}
+
+.dark-button:hover {
+  background: #0f2d22;
+}
+
+.success-box {
+  border: 1px solid #d6f5b8;
+  background: linear-gradient(135deg, #f1eadf, #eaf8dd);
+}
+
+.success-box h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.item-card {
+  min-height: 100%;
+}
+
+.image-card {
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 139, 61, .18), transparent 14rem),
+    linear-gradient(135deg, #eaf8dd, #f1eadf);
+}
+
+.detail-image {
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255, 139, 61, .22), transparent 18rem),
+    linear-gradient(135deg, #eaf8dd, #f1eadf);
+}
+
+.card-body h3 {
+  color: #153a2d;
+}
+
+.footer strong {
+  font-size: 1.4rem;
+}
   @media (max-width: 900px) {
     .filters-panel,
     .detail-grid,
