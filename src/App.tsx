@@ -35,6 +35,19 @@ function formatDistance(distanceKm: number | null): string {
 function formatRating(item: Item): string {
   if (item.owner.rating === null) return "⭐ New lender";
   return `⭐ ${item.owner.rating.toFixed(1)} · ${item.owner.ratingCount} reviews`;
+  function getToolEmoji(category: Category): string {
+  const icons: Record<Category, string> = {
+    "power-tools": "🛠️",
+    "hand-tools": "🔧",
+    garden: "🌿",
+    kitchen: "🍳",
+    outdoor: "🪜",
+    party: "🎉",
+    other: "📦",
+  };
+
+  return icons[category];
+}
 }
 
 function matchesDistance(item: Item, distance: DistanceFilter): boolean {
@@ -291,7 +304,7 @@ function ItemCard({ item, onOpen }: { item: Item; onOpen: () => void }) {
   return (
     <article className="item-card">
       <div className="image-card">
-        {item.photoUrls[0] ? <img src={item.photoUrls[0]} alt="" /> : <span>No photo yet</span>}
+        <span className="tool-emoji">getToolEmoji(item.category)</span>
         {item.status === "paused" && <strong className="status-pill">Paused</strong>}
       </div>
 
@@ -326,7 +339,7 @@ function DetailScreen({ item, onBack, onBook }: { item: Item; onBack: () => void
 
       <div className="detail-grid">
         <div className="detail-image">
-          {item.photoUrls[0] ? <img src={item.photoUrls[0]} alt="" /> : <span>No photo available yet</span>}
+          <span className="tool-emoji large">getToolEmoji(item.category)</span> 
         </div>
 
         <div className="detail-card">
@@ -966,6 +979,13 @@ const styles = `
   .footer span {
     color: #b8cbbf;
   }
+    .tool-emoji {
+  font-size: 5rem;
+}
+
+.tool-emoji.large {
+  font-size: 9rem;
+}
 
   @media (max-width: 900px) {
     .filters-panel,
