@@ -198,14 +198,16 @@ function BrowseScreen({
       <section className="hero-section">
         <div className="hero-content">
           <p className="eyebrow">Neighbourhood equipment sharing</p>
-          <h1>Borrow smarter. Own less. Save more.</h1>
+          <h1>Borrow what you need.
+               When you need it.
+              From people you trust.</h1>
           <p className="hero-copy">
-            BorrowMate helps neighbours rent tools, equipment and everyday items safely from trusted people nearby.
+            BorrowMate helps people rent tools, equipment and everyday items from trusted neighbours. Save money, reduce waste and access what you need without buying it.
           </p>
 
           <div className="hero-buttons">
             <a href="#browse" className="primary-link">
-              Browse equipment
+              Start Borrowing
             </a>
             <button className="light-button">Learn how it works</button>
           </div>
@@ -215,6 +217,9 @@ function BrowseScreen({
             <span>500+ active members</span>
             <span>15 local categories</span>
           </div>
+          <p className="hero-trust">
+             Helping Johannesburg communities borrow smarter.
+          </p>
         </div>
       </section>
 
@@ -287,7 +292,7 @@ function BrowseScreen({
       <section className="section-heading">
         <div>
           <p className="eyebrow">Browse</p>
-          <h2>Available around your neighbourhood</h2>
+          <h2>Available near you today</h2>
         </div>
         <p>{items.length} result{items.length === 1 ? "" : "s"}</p>
       </section>
@@ -455,10 +460,10 @@ function BookingScreen({ item, step, booking, onBack, onBookingChange, onStepCha
 
         {step === 3 && (
           <div className="success-box">
-            <h2>🎉 Booking Request Sent!</h2>
-            <p>Your request has been sent to the lender.</p>
-            <p>You will receive a confirmation once they accept.</p>
-            <p><strong>Estimated response:</strong> within 2 hours.</p>
+            <h2>🎉 Your booking request has been sent!</h2>
+            <p>The lender has received your request.</p>
+            <p>You'll be notified as soon as they respond.</p>
+            <p><strong>Typical response time:</strong> Under 2 hours.</p>
 
             <button className="dark-button" onClick={onBack}>
               Return to item
@@ -500,8 +505,9 @@ function Footer() {
   return (
     <footer className="footer">
       <strong>BorrowMate</strong>
+      <p>Making borrowing simple, affordable and sustainable.</p>
       <p>Built with React, TypeScript and Vite.</p>
-      <span>© 2026 BorrowMate. Founder sprint MVP.</span>
+      <span>© 2026 BorrowMate.</span>
     </footer>
   );
 }
@@ -1041,6 +1047,12 @@ const styles = `
 
 .footer strong {
   font-size: 1.4rem;
+}
+  .hero-trust {
+  margin-top: 1.5rem;
+  color: #d8eadf;
+  font-size: 1rem;
+  font-weight: 600;
 }
   @media (max-width: 900px) {
     .filters-panel,
