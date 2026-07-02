@@ -35,6 +35,7 @@ function formatDistance(distanceKm: number | null): string {
 function formatRating(item: Item): string {
   if (item.owner.rating === null) return "⭐ New lender";
   return `⭐ ${item.owner.rating.toFixed(1)} · ${item.owner.ratingCount} reviews`;
+}
   function getToolEmoji(category: Category): string {
   const icons: Record<Category, string> = {
     "power-tools": "🛠️",
@@ -48,7 +49,7 @@ function formatRating(item: Item): string {
 
   return icons[category];
 }
-}
+
 
 function matchesDistance(item: Item, distance: DistanceFilter): boolean {
   if (distance === "all") return true;
@@ -304,7 +305,7 @@ function ItemCard({ item, onOpen }: { item: Item; onOpen: () => void }) {
   return (
     <article className="item-card">
       <div className="image-card">
-        <span className="tool-emoji">getToolEmoji(item.category)</span>
+        <span className="tool-emoji">{getToolEmoji(item.category)}</span>
         {item.status === "paused" && <strong className="status-pill">Paused</strong>}
       </div>
 
